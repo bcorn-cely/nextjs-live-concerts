@@ -5,14 +5,11 @@ import './globals.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://partialprerendering.com"),
-  title: "Next.js Partial Prerendering",
-  description: "A demo of Next.js using Partial Prerendering.",
+  title: "Better Ticketmaster",
+  description: "A demo of Next.js using Partial Prerendering. Explore your favorite artists and events on a worldclass Next.js site.",
   openGraph: {
-    title: "Next.js Partial Prerendering",
+    title: "Better Ticketmaster",
     description: "A demo of Next.js using Partial Prerendering.",
-  },
-  twitter: {
-    card: "summary_large_image",
   },
 };
 

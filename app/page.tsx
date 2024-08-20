@@ -10,6 +10,7 @@ import { getServices, getFeaturedEvents, getTrendingArtists } from '@/lib/data';
 import LoadingArtists from '@/components/landing/loading/LoadingArtists'
 import LoadingServices from '@/components/landing/loading/LoadingServices'
 import LoadingEvents from '@/components/landing/loading/LoadingEvents'
+import { withDelay } from '@/lib/delay'
 
 export default async function Page() {
   return (
@@ -49,17 +50,17 @@ export default async function Page() {
 }
 
 async function Services() {
-  const services = await getServices();
+  const services = await getServices()
   return <AnimatedServices services={services} />
 }
 async function FeaturedEvents() {
   noStore()
-  const events = await getFeaturedEvents()
+  const events = await withDelay(getFeaturedEvents(), 2000)
   return <AnimatedEvents events={events} />
 }
 
 async function TrendingArtists() {
   noStore()
-  const artists = await getTrendingArtists()
+  const artists = await withDelay(getTrendingArtists(), 2000)
   return <AnimatedArtists artists={artists} />
 }

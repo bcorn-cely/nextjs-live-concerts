@@ -7,21 +7,15 @@ import { CardContent, Card } from "@/components/ui/card"
 import RevealOnScroll from "@/components/ui/revealOnScroll"
 import { FacebookIcon, TwitterIcon } from "lucide-react"
 import { shareEvent } from '@/actions/actions';
+import { Event } from '@/lib/data';
 
-export interface Event {
-  id: string;
-  name: string;
-  date: string;
-  venue: string;
-  city: string;
-  image: string;
-}
 
 export default function AnimatedEvents({ events }: { events: Event[] }) {
+  const lessEvents = events.slice(0, 6);
   return (
     <RevealOnScroll>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {events.map((event, index) => (
+        {lessEvents.map((event, index) => (
           <motion.div
             key={event.id}
             initial={{ opacity: 0, scale: 0.9 }}
