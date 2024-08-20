@@ -1,16 +1,16 @@
 'use client';
 
-import { NextLogo } from '#/components/next-logo';
+// import { NextLogo } from '#/components/next-logo';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 
 import clsx from 'clsx';
 import { useState } from 'react';
-import Byline from '#/components/byline';
-import {
-  delayRecommendedProducts,
-  delayReviews,
-  delayShippingEstimate,
-} from '#/lib/delay';
+// import Byline from '#/components/byline';
+// import {
+//   delayRecommendedProducts,
+//   delayReviews,
+//   delayShippingEstimate,
+// } from '#/lib/delay';
 
 export function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +20,7 @@ export function Sidebar() {
       <div className="flex h-14 items-center px-4 py-4 lg:h-auto">
         <div className="group flex w-full items-center gap-x-2.5">
           <div className="h-7 w-7 rounded-full border border-white/30">
-            <NextLogo />
+            {/* <NextLogo /> */}
           </div>
 
           <h3 className="font-semibold tracking-wide text-gray-400">
@@ -56,9 +56,9 @@ export function Sidebar() {
               denote artificially delayed responses for demo purposes:
             </p>
             <ul>
-              <li>Shipping estimate → {delayShippingEstimate}ms</li>
+              {/* <li>Shipping estimate → {delayShippingEstimate}ms</li>
               <li>Recommended products → {delayRecommendedProducts}ms</li>
-              <li>Reviews → {delayReviews}ms</li>
+              <li>Reviews → {delayReviews}ms</li> */}
             </ul>
           </div>
 
@@ -93,7 +93,7 @@ export function Sidebar() {
             Try refreshing the page to restart the demo.
           </p>
         </div>
-        <Byline className="absolute hidden sm:block" />
+        {/* <Byline className="absolute hidden sm:block" /> */}
       </div>
     </div>
   );
