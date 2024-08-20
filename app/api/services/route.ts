@@ -3,14 +3,20 @@ import { NextRequest, NextResponse } from "next/server";
 export async function POST(req: NextRequest) {
     const services = [
         {
-            title: 'buy tickets', 
-            description: 'We can sell you some tickets'
+            title: 'Ticket Booking', 
+            description: 'Secure your spot at your favorite concerts with ease.',
+            icon: 'ticket'
         },
         {
-            title: 'find concerts',
-            description: 'We can help you find a show'
+            title: 'Event Calendar',
+            description: "Stay updated with all upcoming music events in your area.",
+            icon: 'calendar',
+        }, 
+        {
+            title: 'Artist Profiles',
+            description: 'Explore detailed profiles of your favorite bands and artists.',
+            icon: 'music'
         }
     ];
-    console.log('inside api call ', services);
     return NextResponse.json(services, { status: 200 })
 }

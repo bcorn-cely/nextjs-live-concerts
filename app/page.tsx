@@ -7,6 +7,9 @@ import AnimatedArtists from '@/components/landing/AnimatedArtists'
 import AnimatedServices from '@/components/landing/AnimatedServices'
 import AnimatedNewsletter from '@/components/landing/AnimatedNewsletter'
 import { getServices, getFeaturedEvents, getTrendingArtists } from '@/lib/data';
+import LoadingArtists from '@/components/landing/loading/LoadingArtists'
+import LoadingServices from '@/components/landing/loading/LoadingServices'
+import LoadingEvents from '@/components/landing/loading/LoadingEvents'
 
 export default async function Page() {
   return (
@@ -17,7 +20,7 @@ export default async function Page() {
         <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
           <div className="container px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-8">Featured Events</h2>
-            <Suspense fallback={<div>Loading events...</div>}>
+            <Suspense fallback={<LoadingEvents />}>
               <FeaturedEvents />
             </Suspense>
           </div>
@@ -25,7 +28,7 @@ export default async function Page() {
         <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-8">Trending Artists</h2>
-            <Suspense fallback={<div>Loading artists...</div>}>
+            <Suspense fallback={<LoadingArtists />}>
               <TrendingArtists />
             </Suspense>
           </div>
@@ -33,7 +36,9 @@ export default async function Page() {
         <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
           <div className="container px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-8">Our Services</h2>
-              <OurFeatures />
+              <Suspense fallback={<LoadingServices />}>
+                <Services />
+              </Suspense>
           </div>
         </section>
         <AnimatedNewsletter />
@@ -43,7 +48,7 @@ export default async function Page() {
   )
 }
 
-async function OurFeatures() {
+async function Services() {
   const services = await getServices();
   return <AnimatedServices services={services} />
 }
