@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Artist } from '@/lib/data'
+import { Artist } from '@/lib/data/artistData'
 
 export default function ArtistHeader({ artist }: { artist: Artist }) {
   return (

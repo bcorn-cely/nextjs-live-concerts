@@ -1,4 +1,4 @@
-import { Event } from '@/lib/data'
+import { Event } from '@/lib/data/eventData'
 
 export default function UpcomingEvents({ events }: { events: Event[] }) {
   return (

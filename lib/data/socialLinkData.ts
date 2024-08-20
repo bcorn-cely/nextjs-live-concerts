@@ -51,6 +51,3 @@ export const mockSocialLinks: SocialLink[] = [
     { id: "s24", artistId: "a8", platform: "Spotify", url: "https://open.spotify.com/artist/soulfulserenade" },
 ];
 
-export function getSocialLinksByArtistId(id: string){
-return mockSocialLinks.filter(socialLink => socialLink.artistId === id);
-}

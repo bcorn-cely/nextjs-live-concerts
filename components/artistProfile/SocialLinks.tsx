@@ -1,4 +1,4 @@
-import { SocialLink } from '@/lib/data'
+import { SocialLink } from '@/lib/data/socialLinkData'
 import { FaInstagram, FaTwitter, FaSpotify } from 'react-icons/fa'
 
 const iconMap = {

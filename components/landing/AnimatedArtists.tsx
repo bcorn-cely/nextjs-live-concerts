@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { CardContent, Card } from "@/components/ui/card"
 import RevealOnScroll from '@/components/ui/revealOnScroll';
-import { Artist } from '@/lib/data';
+import { Artist } from '@/lib/data/artistData';
 import Link from "next/link";
 
 export default function AnimatedArtists({ artists } : { artists: Artist[] }) {

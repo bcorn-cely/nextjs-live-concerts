@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { CardContent, Card } from "@/components/ui/card"
 import RevealOnScroll from '@/components/ui/revealOnScroll';
 import { MusicIcon, CalendarIcon, TicketIcon, UserIcon } from "lucide-react"
-import { IconName, Service } from '@/lib/data';
+import { IconName, Service } from '@/lib/data/serviceData';
 
 const iconMap: Record<IconName, React.ComponentType> = {
   ticket: TicketIcon,

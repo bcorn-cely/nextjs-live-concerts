@@ -1,4 +1,4 @@
-import { Track } from '@/lib/data'
+import { Track } from '@/lib/data/trackData'
 
 export default function PopularTracks({ tracks }: { tracks: Track[] }) {
   return (
