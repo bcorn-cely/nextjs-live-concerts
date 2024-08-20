@@ -5,6 +5,7 @@ import { CardContent, Card } from "@/components/ui/card"
 import RevealOnScroll from '@/components/ui/revealOnScroll';
 import { MusicIcon, CalendarIcon, TicketIcon, UserIcon } from "lucide-react"
 import { IconName, Service } from '@/lib/data/serviceData';
+import { ExoticComponent } from "react";
 
 const iconMap: Record<IconName, React.ComponentType> = {
   ticket: TicketIcon,
