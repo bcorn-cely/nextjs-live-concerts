@@ -7,7 +7,8 @@ import { MusicIcon, CalendarIcon, TicketIcon, UserIcon } from "lucide-react"
 import { IconName, Service } from '@/lib/data/serviceData';
 import { ExoticComponent } from "react";
 
-const iconMap: Record<IconName, React.ComponentType> = {
+
+const iconMap = {
   ticket: TicketIcon,
   calendar: CalendarIcon,
   music: MusicIcon,
@@ -35,6 +36,7 @@ export default function AnimatedServices({ services } : { services: Service[] })
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2, duration: 0.5 }}
                   >
+
                     {ServiceIcon && <ServiceIcon className="h-12 w-12 mb-4" />}
                     
                   </motion.div>
