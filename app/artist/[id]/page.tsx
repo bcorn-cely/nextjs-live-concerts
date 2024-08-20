@@ -1,13 +1,13 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation'
-import { getArtistsId, getArtistWithDetails } from '@/lib/data';
+import { getAllArtistIds, getArtistWithDetails } from '@/lib/data';
 import ArtistHeader from '@/components/artistProfile/ArtistHeader'
 import UpcomingEvents from '@/components/artistProfile/UpcomingEvents'
 import PopularTracks from '@/components/artistProfile/PopularTracks'
 import SocialLinks from '@/components/artistProfile/SocialLinks';
 
 export async function generateStaticParams(){
-    const artistIds = await getArtistsId(100);
+    const artistIds = await getAllArtistIds(100);
     return artistIds.map(id => ({ id }))
 }
 
