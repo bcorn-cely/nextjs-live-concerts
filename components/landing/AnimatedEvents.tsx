@@ -7,7 +7,7 @@ import { CardContent, Card } from "@/components/ui/card"
 import RevealOnScroll from "@/components/ui/revealOnScroll"
 import { FacebookIcon, TwitterIcon } from "lucide-react"
 import { shareEvent } from '@/actions/actions';
-import { Event } from '@/lib/data';
+import { Event } from '@/lib/data/eventData';
 
 
 export default function AnimatedEvents({ events }: { events: Event[] }) {
