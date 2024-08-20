@@ -11,7 +11,7 @@ export interface Artist {
     bio: string;
   }
   
-export const artists: Artist[] = [
+export const mockArtistData: Artist[] = [
     {
         id: "a1",
         name: "The Melodic Waves",
