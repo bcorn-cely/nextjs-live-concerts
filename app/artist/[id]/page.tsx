@@ -24,6 +24,7 @@ export default async function ArtistProfile({ params }: { params: { id: string }
     <div className="min-h-screen bg-background">
       <div className="relative h-64 md:h-96">
         <Image
+          unoptimized
           src={artist.image}
           alt={artist.name}
           layout="fill"
