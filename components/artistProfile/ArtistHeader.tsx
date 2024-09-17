@@ -5,6 +5,7 @@ export default function ArtistHeader({ artist }: { artist: Artist }) {
   return (
     <div className="relative h-96">
       <Image
+        unoptimized
         src={artist.image}
         alt={artist.name}
         fill
