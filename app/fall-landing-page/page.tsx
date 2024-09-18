@@ -48,7 +48,7 @@ export default async function Page() {
       </main>
       <footer className="w-full py-6 bg-orange-200 text-orange-900">
         <div className="container px-4 md:px-6 text-center">
-          <p>&copy; 2023 Fall Landing Page. All rights reserved.</p>
+          <p>&copy; 2024 Fall Landing Page. All rights reserved.</p>
         </div>
       </footer>
     </div>
