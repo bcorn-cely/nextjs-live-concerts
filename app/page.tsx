@@ -2,12 +2,15 @@ import { Suspense } from 'react'
 import { unstable_noStore as noStore } from 'next/cache'
 import Header from '@/components/landing/Header'
 import AnimatedHeaderClient from '@/components/landing/client/AnimatedHeader'
-import AnimatedHero from '@/components/landing/AnimatedHero'
+import Hero from '@/components/landing/Hero'
+import AnimatedHero from '@/components/landing/client/Hero/AnimatedHero'
 import Events from '@/components/landing/Events'
 import AnimatedEventsClient from '@/components/landing/client/AnimatedEvents'
 import Artists from '@/components/landing/Artists'
-import AnimatedServices from '@/components/landing/AnimatedServices'
-import AnimatedNewsletter from '@/components/landing/AnimatedNewsletter'
+import Services from '@/components/landing/Services'
+import AnimatedServices from '@/components/landing/client/AnimatedServices'
+import Newsletter from '@/components/landing/Newsletter'
+import AnimatedNewsletter from '@/components/landing/client/AnimatedNewsletter'
 import { getServices, getFeaturedEvents, getTrendingArtists } from '@/lib/data';
 import LoadingArtists from '@/components/landing/loading/LoadingArtists'
 import LoadingServices from '@/components/landing/loading/LoadingServices'
@@ -20,7 +23,9 @@ export default async function Page() {
     <div className="flex flex-col min-h-screen">
       <LandingHeader />
       <main className="flex-1">
-        <AnimatedHero />
+        <AnimatedHero>
+          <Hero />
+        </AnimatedHero>
         <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
           <div className="container px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-8">Featured Events</h2>
@@ -41,11 +46,13 @@ export default async function Page() {
           <div className="container px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-8">Our Services</h2>
               <Suspense fallback={<LoadingServices />}>
-                <Services />
+                <AllServices />
               </Suspense>
           </div>
         </section>
-        <AnimatedNewsletter />
+        <AnimatedNewsletter>
+          <Newsletter />
+        </AnimatedNewsletter>
       </main>
       {/* Footer content */}
     </div>
@@ -60,9 +67,13 @@ function LandingHeader () {
   )
 }
 
-async function Services() {
+async function AllServices() {
   const services = await getServices()
-  return <AnimatedServices services={services} />
+  return (
+    <AnimatedServices>
+      <Services services={services} />
+    </AnimatedServices>
+  )
 }
 async function FeaturedEvents() {
   noStore()
