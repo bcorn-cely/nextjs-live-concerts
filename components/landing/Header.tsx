@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { MusicIcon } from "lucide-react"
+import AnimatedHeaderLink from "./client/Header/AnimatedHeaderLink"
 
 export default function AnimatedHeader() {
   const navs = ["Home", "Search", "Events", "Services"]
@@ -12,11 +13,13 @@ export default function AnimatedHeader() {
       </Link>
       <nav className="ml-auto flex gap-4 sm:gap-6">
         {navs.map((item, index) => (
-          <div key={`nav-${index}`}>
-            <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
-              {item}
-            </Link>
-          </div>
+          <AnimatedHeaderLink index={index} key={`header-link-${index}`}>
+            <div key={`nav-${index}`}>
+              <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
+                {item}
+              </Link>
+            </div>
+          </AnimatedHeaderLink>
         ))}
       </nav>
     </header>

@@ -1,7 +1,7 @@
 import { Suspense } from 'react'
 import { unstable_noStore as noStore } from 'next/cache'
 import Header from '@/components/landing/Header'
-import AnimatedHeaderClient from '@/components/landing/client/AnimatedHeader'
+import AnimatedHeaderClient from '@/components/landing/client/Header/AnimatedHeader'
 import Hero from '@/components/landing/Hero'
 import AnimatedHero from '@/components/landing/client/Hero/AnimatedHero'
 import Events from '@/components/landing/Events'
