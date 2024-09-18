@@ -6,7 +6,7 @@ import AnimatedEvents from '@/components/landing/AnimatedEvents'
 import AnimatedArtists from '@/components/landing/AnimatedArtists'
 import AnimatedServices from '@/components/landing/AnimatedServices'
 import AnimatedNewsletter from '@/components/landing/AnimatedNewsletter'
-import { getServices, getFeaturedEvents, getTrendingArtists } from '@/lib/data';
+import { getServices, getFeaturedEvents, getTrendingArtists } from '@/lib/db';
 import LoadingArtists from '@/components/landing/loading/LoadingArtists'
 import LoadingServices from '@/components/landing/loading/LoadingServices'
 import LoadingEvents from '@/components/landing/loading/LoadingEvents'
