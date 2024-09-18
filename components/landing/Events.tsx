@@ -1,10 +1,7 @@
 
 
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
 import { CardContent, Card } from "@/components/ui/card"
-import { FacebookIcon, TwitterIcon } from "lucide-react"
-import { shareEvent } from '@/actions/actions';
 import { Event } from '@/lib/data/eventData';
 import ShareButtons from "./client/ShareButtons";
 
