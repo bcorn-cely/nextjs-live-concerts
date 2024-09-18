@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { unstable_generatePermutations as generatePermuations } from "@vercel/flags/next/index";
+import { unstable_generatePermutations as generatePermuations } from "@vercel/flags/next";
 import { artistProfilePageFlags } from "@/lib/flags";
 
 export async function generateStaticParams() {
@@ -8,6 +8,6 @@ export async function generateStaticParams() {
     return ids.map((val) => ({code: val }));
 }
 
-export default async function Layout({children}: { children: ReactNode }) {
+export default function Layout({children} : {children: ReactNode}) {
     return children;
 }

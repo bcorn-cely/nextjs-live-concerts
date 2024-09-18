@@ -15,6 +15,14 @@ export async function GET(request: NextRequest) {
           { value: true, label: 'On' },
         ],
       },
+      showArtistProfilePageVar: {
+        description: 'Show a new version of the artist profile page',
+        origin: process.env.EDGE_CONFIG,
+        options: [
+          { value: false, label: 'Off' },
+          { value: true, label: 'On' }
+        ]
+      },
     },
   });
 }

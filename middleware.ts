@@ -1,7 +1,7 @@
 import { type NextRequest, NextResponse } from 'next/server';
-import { showLandingPageMiddleware } from './middleware/flags';
+import { showLandingPageMiddleware, showNewArtistProfilePage } from './middleware/flags';
 
-export const config = { matcher: ['/']};
+export const config = { matcher: ['/', '/artist/:id*']};
 
 type Middleware = (request: NextRequest) => Promise<NextResponse | undefined> | NextResponse | undefined;
 
@@ -14,13 +14,14 @@ export function composeMiddleware(...middlewares: Middleware[]) {
                 return result;
             }
         }
-        return NextResponse.next()
+        return NextResponse.next();
     }
 }
 
 export async function middleware(request: NextRequest) {
     const flagsMiddleware = composeMiddleware(
         showLandingPageMiddleware,
+        showNewArtistProfilePage,
     );
     const result = await flagsMiddleware(request);
     if(result) return result;
