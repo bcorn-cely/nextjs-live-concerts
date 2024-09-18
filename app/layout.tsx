@@ -1,5 +1,6 @@
 import { Header } from "@/components/layout/header";
 import { Sidebar } from "@/components/layout/sidebar";
+import { VercelToolbar } from '@vercel/toolbar/next';
 import { Metadata } from "next";
 import './globals.css';
 
@@ -18,6 +19,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const shouldInjectToolbar = process.env.NODE_ENV === 'development';
   return (
     <html lang="en" className={`[color-scheme:dark]`}>
       <head>
@@ -25,6 +27,7 @@ export default function RootLayout({
       </head>
       <body>
         {children}
+        {shouldInjectToolbar && <VercelToolbar />}
       </body>
 
     </html>
