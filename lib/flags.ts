@@ -4,8 +4,10 @@ import { get } from '@vercel/edge-config';
 export const showFallLandingPage = flags({
     key: 'showFallLandingPage',
     async decide() {
-        const value = await get('showFallLandingPage');
-        return value ?? false;
+        const value = await get('flags');
+        // @ts-ignore -- nested flags from edge config
+        const flag = value && value[this.key];
+        return flag ?? false;
     }
 });
 
@@ -14,8 +16,10 @@ export const landingPageFlags = [showFallLandingPage] as const;
 export const showArtistProfilePageVar = flags({
     key: 'showArtistProfilePageVar',
     async decide() {
-        const value = await get('showArtistProfilePageVar');
-        return value ?? false;
+        const value = await get('flags');
+        // @ts-ignore -- nested flags from edge config
+        const flag = value && value[this.key];
+        return flag ?? false;
     }
 });
 
