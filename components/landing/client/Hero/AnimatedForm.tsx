@@ -9,7 +9,6 @@ export default function AnimatedForm({children}: { children: ReactNode}) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.5 }}
-            className="w-full"
         >
             {children}
         </motion.div>

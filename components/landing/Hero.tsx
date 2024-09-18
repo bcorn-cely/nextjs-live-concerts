@@ -20,14 +20,14 @@ export default function Hero() {
               Find upcoming concerts, explore new bands, and never miss a beat with MusicTown.
             </p>
           </AnimatedText>
-          <AnimatedForm>
-            <div className="w-full max-w-sm space-y-2">
-              <form className="flex space-x-2">
-                <Input className="max-w-lg flex-1" placeholder="Search for bands or venues" type="text" />
-                <Button type="submit">Search</Button>
-              </form>
-            </div>
-          </AnimatedForm>
+          <div className="w-full max-w-sm space-y-2">
+            <AnimatedForm>
+                <form className="flex space-x-2">
+                  <Input className="max-w-lg flex-1" placeholder="Search for bands or venues" type="text" />
+                  <Button type="submit">Search</Button>
+                </form>
+            </AnimatedForm>
+          </div>
         </div>
 
         {/* Large Image Section */}
