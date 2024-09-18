@@ -11,10 +11,9 @@ export default function AnimatedEventsClient({ children }: { children: ReactNode
       <motion.div 
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5, delay: 2 * 0.1 }}
-        className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        transition={{ duration: 0.5, delay: 2 * 0.1 }}>
             {children}
-      </motion.div>
+        </motion.div>
     </RevealOnScroll>
   )
 }
