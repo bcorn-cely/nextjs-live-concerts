@@ -1,24 +1,15 @@
-// import { NextLogo } from '#/components/next-logo';
 import {
   MagnifyingGlassIcon,
   ShoppingCartIcon,
 } from '@heroicons/react/24/solid';
 import Image from 'next/image';
-// import { CartCount } from '#/components/cart-count';
-import { cookies } from 'next/headers';
-import { Suspense } from 'react';
 
-// async function CartCountFromCookies() {
-//   const cartCount = Number(cookies().get('_cart_count')?.value || '0');
-//   return <CartCount initialCartCount={cartCount} />;
-// }
 
 export function Header() {
   return (
     <div className="flex items-center justify-between gap-x-3 rounded-lg bg-gray-800 px-3 py-3 lg:px-5 lg:py-4">
       <div className="flex gap-x-3">
         <div className="h-10 w-10 hover:opacity-70">
-          {/* <NextLogo /> */}
         </div>
 
         <div className="relative flex-1">
