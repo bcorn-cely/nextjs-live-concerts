@@ -19,6 +19,10 @@ import { withDelay } from '@/lib/delay'
 import AnimatedArtistsClient from '@/components/landing/client/AnimatedArtists'
 import { Leaf, Coffee, Apple } from 'lucide-react'
 
+export async function generateStaticParams() {
+  return [];
+}
+
 export default async function Page() {
   return (
     <div className="flex flex-col min-h-screen bg-amber-50 text-orange-900">

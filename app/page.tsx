@@ -18,6 +18,10 @@ import LoadingEvents from '@/components/landing/loading/LoadingEvents'
 import { withDelay } from '@/lib/delay'
 import AnimatedArtistsClient from '@/components/landing/client/AnimatedArtists'
 
+export async function generateStaticParams() {
+  return [];
+}
+
 export default async function Page() {
   return (
     <div className="flex flex-col min-h-screen">
