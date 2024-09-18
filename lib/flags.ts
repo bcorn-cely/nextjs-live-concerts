@@ -5,8 +5,7 @@ export const showFallLandingPage = flags({
     key: 'showFallLandingPage',
     async decide() {
         const value = await get('showFallLandingPage');
-        console.log(' value ', value);
-        return value ? true : false;
+        return value ?? false;
     }
 });
 
@@ -16,8 +15,7 @@ export const showArtistProfilePageVar = flags({
     key: 'showArtistProfilePageVar',
     async decide() {
         const value = await get('showArtistProfilePageVar');
-        console.log('value ', value);
-        return value ? true : false;
+        return value ?? false;
     }
 });
 

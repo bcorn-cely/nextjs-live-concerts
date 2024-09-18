@@ -4,7 +4,6 @@ import { artistProfilePageFlags } from "@/lib/flags";
 
 export async function generateStaticParams() {
     const ids = await generatePermuations(artistProfilePageFlags);
-    console.log('ids', ids);
     return ids.map((val) => ({code: val }));
 }
 
