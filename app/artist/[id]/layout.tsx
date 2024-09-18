@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { unstable_generatePermutations as generatePermuations } from "@vercel/flags/next/index";
+import { unstable_generatePermutations as generatePermuations } from "@vercel/flags/next";
 import { artistProfilePageFlags } from "@/lib/flags";
 
 export async function generateStaticParams() {
