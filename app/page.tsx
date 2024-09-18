@@ -1,8 +1,10 @@
 import { Suspense } from 'react'
 import { unstable_noStore as noStore } from 'next/cache'
 import AnimatedHeader from '@/components/landing/AnimatedHeader'
+import AnimatedHeaderClient from '@/components/landing/client/AnimatedHeader'
 import AnimatedHero from '@/components/landing/AnimatedHero'
 import AnimatedEvents from '@/components/landing/AnimatedEvents'
+import AnimatedEventsClient from '@/components/landing/client/AnimatedEvents'
 import AnimatedArtists from '@/components/landing/AnimatedArtists'
 import AnimatedServices from '@/components/landing/AnimatedServices'
 import AnimatedNewsletter from '@/components/landing/AnimatedNewsletter'
@@ -15,7 +17,7 @@ import { withDelay } from '@/lib/delay'
 export default async function Page() {
   return (
     <div className="flex flex-col min-h-screen">
-      <AnimatedHeader />
+      <Header />
       <main className="flex-1">
         <AnimatedHero />
         <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
@@ -49,6 +51,14 @@ export default async function Page() {
   )
 }
 
+function Header () {
+  return (
+    <AnimatedHeaderClient>
+      <AnimatedHeader />
+    </AnimatedHeaderClient>
+  )
+}
+
 async function Services() {
   const services = await getServices()
   return <AnimatedServices services={services} />
@@ -56,7 +66,11 @@ async function Services() {
 async function FeaturedEvents() {
   noStore()
   const events = await withDelay(getFeaturedEvents(), 2000)
-  return <AnimatedEvents events={events} />
+  return (
+    <AnimatedEventsClient>
+      <AnimatedEvents events={events} />
+    </AnimatedEventsClient>
+  )
 }
 
 async function TrendingArtists() {

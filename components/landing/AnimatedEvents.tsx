@@ -13,16 +13,9 @@ import { Event } from '@/lib/data/eventData';
 export default function AnimatedEvents({ events }: { events: Event[] }) {
   const lessEvents = events.slice(0, 6);
   return (
-    <RevealOnScroll>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {lessEvents.map((event, index) => (
-          <motion.div
-            key={event.id}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-          >
-            <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
+      <div>
+        {lessEvents.map((event: Event, index: number) => (
+            <Card key = {`event-${index}`}className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardContent className="p-6">
                 <div className="relative w-full h-48 mb-4">
                   <Image 
@@ -48,9 +41,7 @@ export default function AnimatedEvents({ events }: { events: Event[] }) {
                 </div>
               </CardContent>
             </Card>
-          </motion.div>
         ))}
       </div>
-    </RevealOnScroll>
   )
 }
