@@ -76,7 +76,6 @@ async function AllServices() {
   )
 }
 async function FeaturedEvents() {
-  noStore()
   const events = await withDelay(getFeaturedEvents(), 2000)
   return (
     <AnimatedEventsClient>
@@ -86,7 +85,6 @@ async function FeaturedEvents() {
 }
 
 async function TrendingArtists() {
-  noStore()
   const artists = await withDelay(getTrendingArtists(), 2000)
   return (
     <AnimatedArtistsClient>
