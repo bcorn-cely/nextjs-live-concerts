@@ -1,14 +1,29 @@
 import { type NextRequest, NextResponse } from 'next/server';
-import { showFallLandingPage } from './lib/flags';
+import { showLandingPageMiddleware } from './middleware/flags';
 
 export const config = { matcher: ['/']};
 
+type Middleware = (request: NextRequest) => Promise<NextResponse | undefined> | NextResponse | undefined;
+
+
+export function composeMiddleware(...middlewares: Middleware[]) {
+    return async (request: NextRequest) => {
+        for (const middleware of middlewares) {
+            const result = await middleware(request);
+            if(result) {
+                return result;
+            }
+        }
+        return NextResponse.next()
+    }
+}
+
 export async function middleware(request: NextRequest) {
-    const landingPage = await showFallLandingPage();
+    const flagsMiddleware = composeMiddleware(
+        showLandingPageMiddleware,
+    );
+    const result = await flagsMiddleware(request);
+    if(result) return result;
 
-    const version = landingPage ? '/' : '/fall-landing-page';
-
-    const nextUrl = new URL(version, request.url);
-
-    return NextResponse.rewrite(nextUrl);
+    return NextResponse.next();
 }
