@@ -24,3 +24,14 @@ export const showArtistProfilePageVar = flags({
 });
 
 export const artistProfilePageFlags = [ showArtistProfilePageVar ] as const;
+
+
+export const showAIChatBot = flags({
+    key: 'showAIChatBot',
+    async decide() {
+        const value = await get('flags');
+        // @ts-ignore
+        const flag = value && value[this.key];
+        return flag && false;
+    }
+})

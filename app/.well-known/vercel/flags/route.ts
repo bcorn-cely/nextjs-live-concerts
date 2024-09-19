@@ -23,6 +23,14 @@ export async function GET(request: NextRequest) {
           { value: true, label: 'On' }
         ]
       },
+      showAIChatBot: {
+        description: 'Testing out an AI Chat bot on the live events website',
+        origin: process.env.EDGE_CONFIG,
+        options: [
+          { value: false, label: 'Off' },
+          { value: true, label: 'On' },
+        ]
+      },
     },
   });
 }
