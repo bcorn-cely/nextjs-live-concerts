@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation'
-import { getAllArtistIds, getArtistWithDetails } from '@/lib/data';
+import { getAllArtistIds, getArtistWithDetails } from '@/lib/db';
 import ArtistHeader from '@/components/artistProfile/ArtistHeader'
 import UpcomingEvents from '@/components/artistProfile/UpcomingEvents'
 import PopularTracks from '@/components/artistProfile/PopularTracks'
