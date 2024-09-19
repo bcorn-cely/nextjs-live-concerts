@@ -1,22 +1,21 @@
 import { Suspense } from 'react'
-import { unstable_noStore as noStore } from 'next/cache'
 import Header from '@/components/landing/Header'
 import AnimatedHeaderClient from '@/components/landing/client/Header/AnimatedHeader'
 import Hero from '@/components/landing/Hero'
 import AnimatedHero from '@/components/landing/client/Hero/AnimatedHero'
 import Events from '@/components/landing/Events'
-import AnimatedEventsClient from '@/components/landing/client/AnimatedEvents'
+import AnimatedEventsClient from '@/components/landing/client/Events/AnimatedEvents'
 import Artists from '@/components/landing/Artists'
 import Services from '@/components/landing/Services'
-import AnimatedServices from '@/components/landing/client/AnimatedServices'
+import AnimatedServices from '@/components/landing/client/Services/AnimatedServices'
 import Newsletter from '@/components/landing/Newsletter'
-import AnimatedNewsletter from '@/components/landing/client/AnimatedNewsletter'
+import AnimatedNewsletter from '@/components/landing/client/Newsletter/AnimatedNewsletter'
 import { getServices, getFeaturedEvents, getTrendingArtists } from '@/lib/db';
 import LoadingArtists from '@/components/landing/loading/LoadingArtists'
 import LoadingServices from '@/components/landing/loading/LoadingServices'
 import LoadingEvents from '@/components/landing/loading/LoadingEvents'
 import { withDelay } from '@/lib/delay'
-import AnimatedArtistsClient from '@/components/landing/client/AnimatedArtists'
+import AnimatedArtistsClient from '@/components/landing/client/Artists/AnimatedArtists'
 
 export async function generateStaticParams() {
   return [];
