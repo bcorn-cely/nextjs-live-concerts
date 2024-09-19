@@ -1,5 +1,5 @@
 import { openai } from '@ai-sdk/openai'
-import { streamText } from 'ai'
+import { streamText } from 'ai';
 
 export const runtime = 'edge'
 

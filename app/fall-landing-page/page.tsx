@@ -5,18 +5,18 @@ import AnimatedHeaderClient from '@/components/landing/client/Header/AnimatedHea
 import Hero from '@/components/landing/Hero'
 import AnimatedHero from '@/components/landing/client/Hero/AnimatedHero'
 import Events from '@/components/landing/Events'
-import AnimatedEventsClient from '@/components/landing/client/AnimatedEvents'
+import AnimatedEventsClient from '@/components/landing/client/Events/AnimatedEvents'
 import Artists from '@/components/landing/Artists'
 import Services from '@/components/landing/Services'
-import AnimatedServices from '@/components/landing/client/AnimatedServices'
+import AnimatedServices from '@/components/landing/client/Services/AnimatedServices'
 import Newsletter from '@/components/landing/Newsletter'
-import AnimatedNewsletter from '@/components/landing/client/AnimatedNewsletter'
+import AnimatedNewsletter from '@/components/landing/client/Newsletter/AnimatedNewsletter'
 import { getServices, getFeaturedEvents, getTrendingArtists } from '@/lib/db';
 import LoadingArtists from '@/components/landing/loading/LoadingArtists'
 import LoadingServices from '@/components/landing/loading/LoadingServices'
 import LoadingEvents from '@/components/landing/loading/LoadingEvents'
 import { withDelay } from '@/lib/delay'
-import AnimatedArtistsClient from '@/components/landing/client/AnimatedArtists'
+import AnimatedArtistsClient from '@/components/landing/client/Artists/AnimatedArtists'
 import { Leaf, Coffee, Apple } from 'lucide-react'
 
 export async function generateStaticParams() {

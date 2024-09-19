@@ -3,6 +3,7 @@ import { Sidebar } from "@/components/layout/sidebar";
 import { VercelToolbar } from '@vercel/toolbar/next';
 import { Metadata } from "next";
 import './globals.css';
+import AIChatbot from "@/components/ai/AiChatBot";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://partialprerendering.com"),
@@ -28,6 +29,7 @@ export default function RootLayout({
       <body>
         {children}
         {shouldInjectToolbar && <VercelToolbar />}
+        <AIChatbot />
       </body>
 
     </html>

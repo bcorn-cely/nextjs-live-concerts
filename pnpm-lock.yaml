@@ -2095,7 +2095,7 @@ snapshots:
       '@vue/shared': 3.5.6
       entities: 4.5.0
       estree-walker: 2.0.2
-      source-map-js: 1.2.0
+      source-map-js: 1.2.1
 
   '@vue/compiler-dom@3.5.6':
     dependencies:
@@ -2112,7 +2112,7 @@ snapshots:
       estree-walker: 2.0.2
       magic-string: 0.30.11
       postcss: 8.4.47
-      source-map-js: 1.2.0
+      source-map-js: 1.2.1
 
   '@vue/compiler-ssr@3.5.6':
     dependencies:
@@ -2291,7 +2291,7 @@ snapshots:
   css-tree@2.3.1:
     dependencies:
       mdn-data: 2.0.30
-      source-map-js: 1.2.0
+      source-map-js: 1.2.1
 
   cssesc@3.0.0: {}
 
