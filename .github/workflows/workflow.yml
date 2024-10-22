@@ -8,6 +8,6 @@ jobs:
       - id: set
         run: |
           echo Event: ${{ github.event_name }}
-          echo Deployment Status: ${{ toJson(github.event.deployment_status) }}
+          echo Deployment Status: ${{ toJSON(github.event.deployment_status) }}
           echo Target URL: ${{ github.event.deployment_status.target_url }}
           echo State: ${{ github.event.deployment_status.state }}
