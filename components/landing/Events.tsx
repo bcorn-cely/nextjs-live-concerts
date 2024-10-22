@@ -3,7 +3,7 @@
 import Image from "next/image"
 import { CardContent, Card } from "@/components/ui/card"
 import { Event } from '@/lib/data/eventData';
-import ShareButtons from "./client/ShareButtons";
+import ShareButtons from "./client/Events/ShareButtons";
 
 
 export default function AnimatedEvents({ events }: { events: Event[] }) {

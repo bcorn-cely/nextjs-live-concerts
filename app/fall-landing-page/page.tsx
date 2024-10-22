@@ -1,4 +1,5 @@
 import { Suspense } from 'react'
+import { unstable_noStore as noStore } from 'next/cache'
 import Header from '@/components/landing/Header'
 import AnimatedHeaderClient from '@/components/landing/client/Header/AnimatedHeader'
 import Hero from '@/components/landing/Hero'
@@ -16,6 +17,7 @@ import LoadingServices from '@/components/landing/loading/LoadingServices'
 import LoadingEvents from '@/components/landing/loading/LoadingEvents'
 import { withDelay } from '@/lib/delay'
 import AnimatedArtistsClient from '@/components/landing/client/Artists/AnimatedArtists'
+import { Leaf, Coffee, Apple } from 'lucide-react'
 
 export async function generateStaticParams() {
   return [];
@@ -23,15 +25,15 @@ export async function generateStaticParams() {
 
 export default async function Page() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-amber-50 text-orange-900">
       <LandingHeader />
       <main className="flex-1">
         <AnimatedHero>
           <Hero />
         </AnimatedHero>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-orange-100">
           <div className="container px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-8">Featured Events</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-8 text-orange-800">Autumn Events</h2>
             <Suspense fallback={<LoadingEvents />}>
               <FeaturedEvents />
             </Suspense>
@@ -39,25 +41,30 @@ export default async function Page() {
         </section>
         <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-8">Trending Artists</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-8 text-orange-800">Fall Favorites</h2>
             <Suspense fallback={<LoadingArtists />}>
               <TrendingArtists />
             </Suspense>
           </div>
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-orange-100">
           <div className="container px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-8">Our Services</h2>
-              <Suspense fallback={<LoadingServices />}>
-                <AllServices />
-              </Suspense>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-8 text-orange-800">Seasonal Services</h2>
+            <Suspense fallback={<LoadingServices />}>
+              <AllServices />
+            </Suspense>
           </div>
         </section>
+        <FallActivities />
         <AnimatedNewsletter>
-          <Newsletter />
+            <Newsletter />
         </AnimatedNewsletter>
       </main>
-      {/* Footer content */}
+      <footer className="w-full py-6 bg-orange-200 text-orange-900">
+        <div className="container px-4 md:px-6 text-center">
+          <p>&copy; 2024 Fall Landing Page. All rights reserved.</p>
+        </div>
+      </footer>
     </div>
   )
 }
@@ -93,5 +100,48 @@ async function TrendingArtists() {
     <AnimatedArtistsClient>
       <Artists artists={artists} />
     </AnimatedArtistsClient>
+  )
+}
+
+function FallActivities() {
+  return (
+    <section className="w-full py-12 md:py-24 lg:py-32">
+      <div className="container px-4 md:px-6">
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-8 text-orange-800">Fall Activities</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <ActivityCard
+            icon={<Leaf className="w-12 h-12 text-orange-600" />}
+            title="Leaf Peeping"
+            description="Enjoy the beautiful autumn colors with guided tours through scenic routes."
+          />
+          <ActivityCard
+            icon={<Coffee className="w-12 h-12 text-orange-600" />}
+            title="Cozy Cafés"
+            description="Warm up with seasonal drinks and treats at our partner cafés."
+          />
+          <ActivityCard
+            icon={<Apple className="w-12 h-12 text-orange-600" />}
+            title="Apple Picking"
+            description="Visit local orchards for apple picking and fall-themed activities."
+          />
+        </div>
+      </div>
+    </section>
+  )
+}
+
+interface ActivityCardProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
+
+function ActivityCard({ icon, title, description }: ActivityCardProps) {
+  return (
+    <div className="flex flex-col items-center p-6 bg-orange-50 rounded-lg shadow-md">
+      {icon}
+      <h3 className="mt-4 text-xl font-semibold text-orange-800">{title}</h3>
+      <p className="mt-2 text-center text-orange-700">{description}</p>
+    </div>
   )
 }
